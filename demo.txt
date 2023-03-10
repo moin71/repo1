@@ -1,1 +1,21 @@
-i did it
+from github import Github
+
+
+# using username and password
+g = Github("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")
+
+# or using an access token
+#g = Github("access_token")
+
+
+repo = g.get_user().get_repo("repo1")
+    
+
+#g = Github('fsyed8631@gmail.com','Logmein@1234567')
+#repo = g.get_user().get_repo("repo1")
+#repo.create_file("demo.txt","the first file", "i did it")
+
+print('-------------------------------------------')
+a = repo.get_contents("demo.txt")
+content = a.decoded_content.decode()
+print(content)
